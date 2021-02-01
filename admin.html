@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>safe-content(Admin)</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body onload="renderTable()">
+    <div class="main-container">
+        <h2>Welcome back, Admin!</h2>
+        <div class="header">
+            <div class="curr-user"></div>
+            <button class="back" onclick="goBack()">Back</button>
+            <button class="logout" onclick="onLogout()">Logout</button>
+            <input type="text" placeholder="Enter username" name="createUser" />
+            <input type="text" placeholder="Enter password" name="createPassword" />
+            <select name="isAdmin">
+                <option value="true">Admin</option>
+                <option value="false">User</option>
+            </select>
+            <button class="create" onclick="createNewUser()">Create</button>
+        </div>
+        <div class="table-container">
+            <table>
+                <tbody>
+                    <tr class="description">
+                        <td class="btn" onclick="onSetSort('userName')">User Name</td>
+                        <td>Password</td>
+                        <td class="btn" onclick="onSetSort('lastLoginTime')">Last login tame</td>
+                        <td>is Admin</td>
+                    </tr>
+                </tbody>
+                <tbody class="toRender">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="js/utils.js"></script>
+    <script src="js/login-servise.js"></script>
+    <script src="js/login-controller.js"></script>
+    <script src="js/storage-service.js"></script>
+</body>
+
+</html>

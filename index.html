@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Shop</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body onload="init()">
+    <div class="main-container">
+        <header>
+            <div class="add-new-book">
+                <h3>Add new book</h3>
+                <form class="add-new-book" >
+                    <input type="text" placeholder="Enter the title" name="create-title" />
+                    <input type="text" placeholder="Enter the price" name="create-price" />
+                    <button class="add-book" onclick="onAddBook()">Add book</button>
+                </form>
+            </div>
+            <h1>Welcome to my bookshop</h1>
+            <div class="login-container">
+                <div class="username">
+                    <h3>Username</h3>
+                    <form onsubmit="onUserName(event)">
+                        <input type="text" placeholder="Enter username" name="username" />
+                    </form>
+                </div>
+                <div class="password">
+                    <h3>Password</h3>
+                    <form onsubmit="onPassword(event)">
+                        <input type="text" placeholder="Enter password" name="password" />
+                    </form>
+                </div>
+                <button class="login" onclick="onLogin()">Login</button>
+            </div>
+            <div class="logout hidden">
+                <h3>Welcome back, <span></span></h3>
+                <button onclick="onLogout()">Logout</button>
+                <a class="admin-link" href="admin.html">Admin zone</a>
+            </div>
+        </header>
+
+        <section class="table-container">
+            <table>
+                <thead>
+                    <tr class="t-header">
+                        <td>Id</td>
+                        <td>Photo</td>
+                        <td class="title" onclick="onSort('title')">Title</td>
+                        <td class="price" onclick="onSort('price')">Price</td>
+                        <td colspan="4">Actions</td>
+                    </tr>
+                </thead>
+                <tbody class="books-to-render">
+                </tbody>
+            </table>
+        </section>
+        <section class="modal modal-hidden">
+            <div class="image-holder">
+                <img src="" alt="photo of the book">
+            </div>
+            <div class="info">
+                <p>Reed some more about the <span class="book-name"></span></p>
+                <div>
+                    <span>Only now! </span>
+                    <span class="prev-price"></span>
+                    <span class="new-price"></span>
+                </div>
+                <div class="description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Odio quod dicta debitis fugit reprehenderit unde beatae,
+                    ex ipsa velit tempore quos quibusdam rerum doloremque adipisci
+                    sequi eius eligendi culpa! Id. Lorem ipsum dolor sit amet
+                    consectetur adipisicing elit. Tempore illo cupiditate autem,
+                    rerum quod totam. Veritatis eum aperiam fugit molestiae quam
+                    sed minus corporis ipsam aut at, nobis ab a. Lorem ipsum dolor
+                    sit, amet consectetur adipisicing elit. Illo vel dolorem delectus.
+                    Architecto veniam alias, nesciunt consectetur eos laudantium
+                    perferendis similique reiciendis repudiandae pariatur voluptatem
+                    fugit accusamus officiis cum facilis!
+                </div>
+                <div class="rate">
+                    <button class="decrRate" onclick="onChangeRate(false)">➖</button>
+                    <p>Rate: <span></span></p>
+                    <button class="riseRate" onclick="onChangeRate(true)">➕</button>
+                    <button class="closeModal" onclick="onCloseModal()">🔙</button>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <button class="page-down" onclick="onChangePage(-1)">⏪</button>
+            <span class="paging-btns"></span>
+            <button class="page-up" onclick="onChangePage(1)">⏩</button>
+        </footer>
+    </div>
+    <script src="js/utils.js"></script>
+    <script src="js/book-service.js"></script>
+    <script src="js/login-servise.js"></script>
+    <script src="js/login-controller.js"></script>
+    <script src="js/storage-service.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
