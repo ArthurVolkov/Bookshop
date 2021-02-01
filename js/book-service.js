@@ -31,6 +31,7 @@ function getBook(id) {
 function createBooks() {
     var books = loadFromStorage(STORAGE_KEY);
     if (!books || !books.length) {
+        books = [];
         for (var i = 1; i < 24; i++) {
             books.push(createBook())
         }
