@@ -37,7 +37,7 @@ function createBooks() {
         }
     }
     gBooks = books;
-    saveBooksToStorage();
+    saveBooksToStorage();  
 }
 
 
