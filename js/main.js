@@ -18,7 +18,7 @@ function renderBooks() {
                     <td>${book.id}</td>
                     <td class="td-img"><img src="${book.imgURL}" alt="book image"></td>
                     <td>${book.title}</td>
-                    <td>${book.price}</td>
+                    <td>${book.price} $</td>
                     <td class="read" onclick="onRead(${book.id})">Read</td>
                     <td class ="update td-${book.id}" onclick="onShowUpdate(this, ${book.id})">Update</td>
                     <td class="update-hidden hidden id-${book.id}"><input class="price-input-${book.id}" type="text" placeholder="New price"/>
